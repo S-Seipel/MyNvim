@@ -17,29 +17,4 @@ vim.opt.autoindent = true
 vim.opt.backspace = "indent,eol,start"
 vim.opt.smarttab = true
 
-vim.opt.encoding = "utf-8"
-vim.opt.fileencoding = "utf-8"
-vim.opt.compatible = false
-vim.opt.hidden = false
-vim.opt.autoread = true
-vim.opt.mouse = "a"
 vim.opt.termguicolors = true
-
-vim.opt.lazyredraw = true
-vim.opt.updatetime = 250
-vim.opt.timeoutlen = 500
-
-vim.opt.wildmenu = true
-vim.opt.wildmode = { "longest", "list", "full" }
-vim.opt.path:append("**")
-vim.opt.completeopt = { "menuone", "noselect" }
-
-vim.opt.confirm = true
-vim.opt.switchbuf = "useopen"
-
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-vim.opt.fillchars:append({ eob = " " })
-vim.opt.inccommand = "split"
-vim.opt.title = true
-
