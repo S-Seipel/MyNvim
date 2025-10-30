@@ -1,8 +1,10 @@
 return {
 	"folke/tokyonight.nvim",
-	name = "tokyonight",
+	name = 'tokyonight',
+	lazy = false,
 	priority = 1000,
-	config = function()
-		vim.cmd([[colorscheme tokyonight]])
-	end,
+	opts = {},
+	config = function ()
+		vim.cmd[[colorscheme tokyonight-storm]]
+	end
 }

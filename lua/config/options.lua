@@ -18,3 +18,5 @@ vim.opt.backspace = "indent,eol,start"
 vim.opt.smarttab = true
 
 vim.opt.termguicolors = true
+
+vim.diagnostic.config({ virtual_text = true })
