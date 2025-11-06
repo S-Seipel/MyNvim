@@ -20,3 +20,8 @@ vim.opt.smarttab = true
 vim.opt.termguicolors = true
 
 vim.diagnostic.config({ virtual_text = true })
+
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldlevel = 99
+vim.o.foldenable = true
