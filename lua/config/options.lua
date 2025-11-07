@@ -17,6 +17,9 @@ vim.opt.autoindent = true
 vim.opt.backspace = "indent,eol,start"
 vim.opt.smarttab = true
 
+vim.opt.fileformats = { "unix", "dos" }
+vim.opt.fileformat = "unix"
+
 vim.opt.termguicolors = true
 
 vim.diagnostic.config({ virtual_text = true })
@@ -25,3 +28,11 @@ vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevel = 99
 vim.o.foldenable = true
+
+vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#ff6b6b" })
+vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = "#f2c94c" })
+vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = "#56b6c2" })
+vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = "#9ca3af" })
+
+vim.o.conceallevel = 2
+
