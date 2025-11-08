@@ -16,6 +16,8 @@ vim.keymap.set("n", "<leader>w", function()
   print("Wrap: " .. (vim.o.wrap and "ON" or "OFF"))
 end, { desc = "Toggle line wrap" })
 
+vim.keymap.set("n", "<Leader>q", ":q", { noremap = true, silent = true })
+
  -- ==== Obsidian ====
 local function slugify(title)
   local s = title:lower()
