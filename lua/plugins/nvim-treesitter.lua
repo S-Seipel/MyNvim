@@ -6,13 +6,13 @@ return {
 	config = function () 
 		require'nvim-treesitter.configs'.setup { 
 			ensure_installed = { 
-				"html", "css", "typescript", "lua", "tsx", "javascript", "php", "php_only", "phpdoc"
+				"html", "css", "typescript", "lua", "tsx", "javascript", "php", "php_only", "phpdoc", "blade"
 			}, 
 			sync_install = false, 
 			auto_install = true, 
 			highlight = { 
 				enable = true, 
-				-- disable = { "php" },
+				disable = { "php", "blade" },
 				-- additional_vim_regex_highlighting = false, 
 			}, 
 		} 
