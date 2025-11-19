@@ -12,7 +12,7 @@ return {
 			auto_install = true, 
 			highlight = { 
 				enable = true, 
-				disable = { "php", "blade" },
+				-- disable = { "php", "blade" },
 				-- additional_vim_regex_highlighting = false, 
 			}, 
 		} 

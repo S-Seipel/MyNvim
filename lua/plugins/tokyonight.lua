@@ -1,10 +1,39 @@
 return {
-	"folke/tokyonight.nvim",
-	name = 'tokyonight',
-	lazy = false,
-	priority = 1000,
-	opts = {},
-	config = function ()
-		vim.cmd[[colorscheme tokyonight-storm]]
-	end
+  "folke/tokyonight.nvim",
+  name = "tokyonight",
+  lazy = false,
+  priority = 1000,
+  opts = {
+    style = "night",           -- o "storm", pero night es más dark
+    transparent = true,        -- 🔥 esto es lo importante
+    styles = {
+      sidebars = "transparent",
+      floats = "transparent",
+    },
+  },
+  config = function()
+    -- aplicamos el tema
+    vim.cmd([[colorscheme tokyonight-night]])
+
+    -- 💡 forzamos algunos grupos a ser transparentes
+    local transparent_groups = {
+      "Normal",
+      "NormalNC",
+      "SignColumn",
+      "EndOfBuffer",
+      "MsgArea",
+      "LineNr",
+      "CursorLineNr",
+      "VertSplit",
+      "StatusLine",
+      "TabLineFill",
+      "NormalFloat",
+      "FloatBorder",
+      "Pmenu",
+    }
+
+    for _, group in ipairs(transparent_groups) do
+      vim.cmd("hi " .. group .. " guibg=NONE ctermbg=NONE")
+    end
+  end,
 }

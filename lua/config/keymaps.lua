@@ -16,7 +16,20 @@ vim.keymap.set("n", "<leader>w", function()
   print("Wrap: " .. (vim.o.wrap and "ON" or "OFF"))
 end, { desc = "Toggle line wrap" })
 
-vim.keymap.set("n", "<Leader>q", ":q", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>q", ":wq<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>qa", ":wqa<CR>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<A-S-j>", "yyp", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-S-k>", "yyP", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-S-j>", "y'>pgv", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-S-k>", "y'<Pgv", { noremap = true, silent = true })
+
+
+-- BUSCADOR DE COMENTARIOS
+vim.keymap.set("n", "<Leader>n", function()
+	require('telescope').extensions["todo-comments"].todo()
+end, { desc = "Buscar todos los TODO" })
+
 
  -- ==== Obsidian ====
 local function slugify(title)
