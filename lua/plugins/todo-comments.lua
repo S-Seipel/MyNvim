@@ -7,7 +7,7 @@ return {
     keywords = {
       TODO = { icon = " ", color = "info" },
       FIX = { icon = " ", color = "error" },
-      NOTE = { icon = " ", color = "#48F7A8" },
+      NOTE = { icon = " ", color = "#7EBD88" },
 
       URGENTE = { icon = " ", color = "error" },
       REVISAR = { icon = " ", color = "warning" },
