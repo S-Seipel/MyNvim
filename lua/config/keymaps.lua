@@ -24,6 +24,9 @@ vim.keymap.set("n", "<A-S-k>", "yyP", { noremap = true, silent = true })
 vim.keymap.set("v", "<A-S-j>", "y'>pgv", { noremap = true, silent = true })
 vim.keymap.set("v", "<A-S-k>", "y'<Pgv", { noremap = true, silent = true })
 
+-- COMANDOS GIT --
+
+vim.keymap.set("n", "<C-g>", ":G<space>", { noremap = true, silent = false })
 
 -- BUSCADOR DE COMENTARIOS
 vim.keymap.set("n", "<Leader>n", function()
