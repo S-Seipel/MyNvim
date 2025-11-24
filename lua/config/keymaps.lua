@@ -10,6 +10,9 @@ vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-Tab>", "<gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
 
+-- LazyGit
+vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit" })
+
 -- Toggle wrap
 vim.keymap.set("n", "<leader>w", function()
   vim.o.wrap = not vim.o.wrap

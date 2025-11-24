@@ -7,68 +7,46 @@ return {
       return
     end
 
-    vim.lsp.enable({
-      "jsonls",
-      "cssls",
-      "html",
-      "yamlls",
-      "intelephense",
-      "emmet_ls",
-      "ts_ls",
-      "tailwindcss",
-			"pyright"
-    })
+    local util = require("lspconfig.util")
 
-    vim.schedule(function()
-      local notify = vim.notify
-      vim.notify = function(msg, ...)
-        if msg:match("The require%(\'lspconfig%)") then
-          return
-        end
-        notify(msg, ...)
-      end
-    end)
-
-    lspconfig.ts_ls.setup({
-      settings = {
-        typescript = {
-          preferences = {
-            importModuleSpecifier = "relative",
-          },
-          tsserver = {
-            useSyntaxServer = "auto",
-          },
-        },
-        javascript = {
-          preferences = {
-            importModuleSpecifier = "relative",
-          },
-        },
-      },
-      root_dir = lspconfig.util.root_pattern(
-        "tsconfig.json",
-        "package.json",
-        ".git"
-      ),
-    })
-
-    lspconfig.intelephense.setup({
-      settings = {
-        intelephense = {
-          environment = {
-            phpVersion = "8.2",
-          },
-        },
-      },
-    })
-
+    -- Diagnósticos
     vim.diagnostic.config({
       virtual_text = { prefix = "●" },
       signs = true,
       underline = true,
       severity_sort = true,
     })
-		lspconfig.pyright.setup({})
+
+    -- ---------- SERVERS ----------
+    -- TypeScript / JavaScript (nuevo nombre: ts_ls)
+    lspconfig.ts_ls.setup({
+      settings = {
+        typescript = {
+          preferences = { importModuleSpecifier = "relative" },
+          tsserver = { useSyntaxServer = "auto" },
+        },
+        javascript = {
+          preferences = { importModuleSpecifier = "relative" },
+        },
+      },
+      root_dir = util.root_pattern("tsconfig.json", "package.json", ".git"),
+    })
+
+    -- PHP
+    lspconfig.intelephense.setup({
+      settings = {
+        intelephense = { environment = { phpVersion = "8.2" } },
+      },
+    })
+
+    -- CSS / HTML / JSON / YAML / Tailwind / Emmet / Python
+    lspconfig.cssls.setup({})
+    lspconfig.html.setup({})
+    lspconfig.jsonls.setup({})
+    lspconfig.yamlls.setup({})
+    lspconfig.tailwindcss.setup({})
+    lspconfig.emmet_ls.setup({})
+    lspconfig.pyright.setup({})
   end,
 }
 

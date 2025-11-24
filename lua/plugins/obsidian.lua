@@ -3,8 +3,8 @@ return {
   version = "*",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope.nvim", -- 👈 aseguramos el picker
-  },
+    "nvim-telescope/telescope.nvim", 
+	},
   cmd = {
     "ObsidianOpen",
     "ObsidianNew",
@@ -15,6 +15,7 @@ return {
   },
   ft = "markdown",
   opts = {
+		dir = '/home/seipel/obsidian/',
     workspaces = {
 			{ name = "main", path = "/home/seipel/obsidian" },
       { name = "ideas", path = "/home/seipel/obsidian/Ideas y ntoas rapidas" },
@@ -25,7 +26,7 @@ return {
       { name = "propulse", path = "/home/seipel/obsidian/Propulse" },
 			},
     picker = {
-      name = "telescope.nvim",   -- 👈 ESTA línea es la que te faltaba
+      name = "telescope.nvim",   
     },
   },
 }

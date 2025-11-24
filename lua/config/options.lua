@@ -36,3 +36,4 @@ vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = "#9ca3af" })
 
 vim.o.conceallevel = 2
 
+vim.cmd.colorscheme("catppuccin")
