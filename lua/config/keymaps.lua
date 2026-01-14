@@ -10,6 +10,9 @@ vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-Tab>", "<gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
 
+-- MODO FOCUS
+vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = "Toggle Focus (Zen)" })
+
 -- LazyGit
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit" })
 
@@ -165,3 +168,13 @@ if ok_t then
   vim.keymap.set("n", "<leader>no", pick_workspace_and_create_note,
     { desc = "Nueva nota (elegir carpeta)" })
 end
+
+vim.keymap.set("n", "<leader>s", "<Plug>SlimeLineSend", { desc = "Slime send line" })
+vim.keymap.set("v", "<leader>s", "<Plug>SlimeRegionSend", { desc = "Slime send selection" })
+
+vim.keymap.set("n", "<leader>r", function()
+  vim.cmd("w")
+  vim.cmd("botright split | terminal node %")
+end, { desc = "Run current JS file in terminal" })
+
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })

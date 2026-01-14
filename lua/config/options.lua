@@ -36,4 +36,17 @@ vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = "#9ca3af" })
 
 vim.o.conceallevel = 2
 
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("kanagawa")
+
+vim.api.nvim_create_autocmd({"WinEnter","BufEnter"}, {
+  callback = function()
+    vim.wo.winhighlight = "Normal:Normal,NormalNC:NormalNC"
+  end,
+})
+
+vim.api.nvim_set_hl(0, "Normal", { bg = "#1f1f28" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1f1f28" })
+
+-- statusline minimal
+vim.o.laststatus = 3
+vim.o.statusline = "%f%m%r%=%l:%c %p%%"
